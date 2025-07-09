@@ -1,0 +1,8 @@
+version: '1.0'
+services:
+  tomcat:
+    image: tomcat:11.0.9
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./build/libs/exploded/T1_hw-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/T1_hw-1.0-SNAPSHOT.war
