@@ -1,11 +1,10 @@
-import com.example.t1_hw.SupportService;
+import com.example.t1_hw.SupportServiceImpl;
 import com.example.t1_hw.SupportServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.junit.jupiter.api.*;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import static org.mockito.Mockito.*;
@@ -14,7 +13,7 @@ public class SupportServletTest {
     private SupportServlet servlet;
     private HttpServletRequest request;
     private HttpServletResponse response;
-    private SupportService service;
+    private SupportServiceImpl service;
     public Writer writer;
     public Reader reader;
     private static final Logger logger = Logger.getLogger("Tests");
@@ -22,7 +21,7 @@ public class SupportServletTest {
 
     @BeforeEach
     public void initTest() throws IOException {
-        service = mock(SupportService.class);
+        service = mock(SupportServiceImpl.class);
         when(service.getRandomMessage()).thenReturn(testRandomMessage);
         servlet = new SupportServlet(service);
         request = mock(HttpServletRequest.class);

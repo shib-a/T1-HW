@@ -1,19 +1,17 @@
 package com.example.t1_hw;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Random;
 
 import jakarta.servlet.http.*;
 
 public class SupportServlet extends HttpServlet {
-    private SupportService supportService;
+    private SupportServiceImpl supportService;
 
     @Override
     public void init() {
-        supportService = new SupportService();
+        supportService = new SupportServiceImpl();
     }
-    public SupportServlet(SupportService service){
+    public SupportServlet(SupportServiceImpl service){
         this.supportService = service;
     }
 

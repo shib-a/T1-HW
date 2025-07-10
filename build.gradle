@@ -23,6 +23,7 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     implementation('jakarta.servlet:jakarta.servlet-api:5.0.0')
+    implementation 'org.reflections:reflections:0.10.2'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testImplementation ('org.mockito:mockito-core:5.18.0')
